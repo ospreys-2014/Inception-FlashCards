@@ -9,7 +9,7 @@ As a user I want to:
   exit the game
 =end
 
-=begin
+
 
 Pseudod
 
@@ -37,24 +37,44 @@ CREATE class Controller
 
   DEFINE reads_file(takes 1 argument)
     input : file string, file to read
-    DO :    parse file
-            calls function #creates_flashcard_objects
+    DO :    read the file
+            push each line as string element into array
+            slice_each by 3, delete blank element
+            [[]]
+            iterate through each create flashcard object
     OUTPUT : parsed txt file
   END
 
-  DEFINE creates_flashcard_objects
-    input:   parsed txt file
-    do:      create flashcard objects
-    output:
-  END
 
   DEFINE set_players
-    promopt player for players
+
     input: number of players
-    do: ask for number of players and make that many player objects (talk to class Player)
+    do: promopt user for players
+        make that many player objects (talk to class Player)
     output: populated @players array
   END
 
   DEFINE start_game
+   input :
+   do:  select player
+        player picks card from @DECK
+        player gets the question
+        player enter the answer
+          True : increment player score by 1(check if winner exists), go to next player
+          False : Allow one more guess
+            True : do line 63
+            False : No point, go to next player
 
-=end
+    output
+
+  DEFINE winner?
+    Input. Player objects
+    DO : Check score == 5 return True
+    Output : Return tru if score ==5
+
+  DEFINE exit()
+    INPUT
+    DO
+    OUPUT  Break out of start_game
+
+
