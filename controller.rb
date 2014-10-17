@@ -1,4 +1,4 @@
-# require 'models.rb'
+require_relative 'models.rb'
 require 'CSV'
 
 class Controller
@@ -17,7 +17,7 @@ class Controller
       new_array << triplet
     end
 
-    @deck = new_array.map do |pair| Flashcard.new ({definition: pair[0], answer: pair[1]})
+    @deck = new_array.map do |pair| Flashcard.new ({definition: pair[0], answer: pair[1]}) end
 
   end
 
@@ -25,12 +25,6 @@ class Controller
     file = "source/flashcards_samples.txt"
     read_file (file)
   end
-
 end
 
 User = Controller.new
-
-
-
-
-
