@@ -11,7 +11,7 @@ As a user I want to:
 
 =begin
 
-Pseudo
+Pseudod
 
 CREATE class Controller
   DEFINE initialize
