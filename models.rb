@@ -1,15 +1,16 @@
 
 class Player
-attr_reader :name, :score
+attr_reader :name
+attr_accessor :score
   def initialize(name)
     @name = name
-    @score = 0
+    @score = 4
   end
 end
 
 
 class Flashcard
-attr_reader :definition
+attr_reader :definition, :answer
   def initialize(args={})
     @definition = args.fetch(:definition)
     @answer = args.fetch(:answer)
