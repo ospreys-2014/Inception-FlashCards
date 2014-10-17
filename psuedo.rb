@@ -7,7 +7,7 @@ As a user I want to:
   want game to end at 5 points
   see the score
   exit the game
-=ende
+=ended
 
 =begin
 
