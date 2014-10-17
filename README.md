@@ -1,34 +1,104 @@
-# IMDB Database Design 
- 
-##Learning Competencies 
+Ruby Flashcards 1 Single Deck
+Learning Competencies
 
-* Design database schema from problem data
-* Model relationships in a relational database (one-to-one, one-to-many, many-to-many)
+Create well-defined classes with a single responsibility
+Identify and implement classes based on real world requirements
+Implement clean and flexible interfaces between objects
+Create interactive command-line applications with data persistence
+Summary
 
-##Summary 
+Let's build a simple flashcard game in Ruby with a command-line interface. Here is an example of one possible implementation:
 
- You know the Internet Movie Database?  Let's figure out their schema.
+$ ruby flashcards.rb
+Welcome to Ruby Flash Cards. To play, just enter the correct term for each definition.  Ready?  Go!
 
-Requirements:
+Definition
+A file format in which values are delimited by commas.
 
-1. A person has a first and last name
-2. A person has many roles
-3. A person with a roles is in a movie (e.g., "Producer of X", "Supporting Actor in Y")
-4. A movie has a title, rating, and release date
-5. A movie has a genre, and a genre has many movies
-6. A person can have awards, and awards can be won by multiple people (e.g., "Best Actor" is an awards, won by someone in 2010 and 2011)
+Guess: YAML
+Incorrect!  Try again.
 
-##Releases
+Guess: XML
+Incorrect!  Try again.
 
-###Release 0 : Design schema
+Guess: CSV
+Correct!
 
-Design a database schema for IMDB that meets the requirements.
+Definition
+(and so on)
+Releases
 
-Use [SQL Designer](https://socrates.devbootcamp.com/sql.html) to create your schema.  When you are done, save the XML of your schema and copy it into the source file `imdb.md`. Then, take a screenshot of your final schema design, and upload it using a free image-upload service like [Min.us](http://minus.com).  Paste the URL of the screenshot into your source file (before your XML code). 
+Release 0 : Design
 
+Choose Your Data Model and Control Flow
 
-<!-- ##Optimize Your Learning  -->
+You might already have a clear picture of how to design your program, but it is always a good idea to articulate your concept using pseudocode, wireframes, or another modeling tool. You should be able to draw or write out a rough sketch of both the data model and the control flow of the program.
 
-##Resources
+This stage should take at most 15-20 minutes. If you're spending more than that, find a staff member to get you unstuck.
 
-* [SQL Designer](https://socrates.devbootcamp.com/sql.html)
+Some questions to consider:
+
+Do you fully understand the logic of the game?
+What classes (state and behavior) do you need?
+What are the responsibilities of each class? Are they single responsibilities?
+Which methods should be public? Which should be private?
+Once you have a plan in place, create the skeletal file structure for your app.
+
+Find a staff member or another student and get their opinion on your overall structure.
+
+Cards in a file
+
+The next step is to answer the question of where the cards will come from. Provided in the gist is a file called sample_cards.txt, which demonstrates a supremely basic way to store the card data (definition on one line, term on the next, and then a blank line to separate the two). In other words, the file looks like:
+
+definition1 definition1 definition1 etc.
+term1 term1 term1 etc.
+
+definition2 definition2 definition2 etc.
+term2 term2 term2 etc.
+You can use this same file format for your cards if you like, or you can create your own. Just don't get too fancy. Remember, we're keeping it simple.
+
+Release 1 : Build it!
+
+Core architecture
+
+Now that you've got a general sketch for your app design and some sample data to work with, it's time to build out your app.
+
+Think carefully about how each piece of the puzzle should fit together. Build it out slowly and test as you go. Skip the user interface (the part of your program that will receive and respond to user input) for now. You can mock user input by creating having a method on one of your classes that takes a guess as an argument and performs the appropriate action. Later you can hook this up to real, live user input.
+
+Some questions to consider:
+
+How will you generate card objects from the source file?
+How will your classes interact?
+Where should the game logic live? What about the file parsing?
+Interface design
+
+By this point, you should have all of the core components of your application built out. In other words, your code should be an accurate model of the ingredients needed for a real-life flashcard game. Are you missing anything?
+
+Finally, it is time to implement the interactive part of the game: the piece that will actually let you play with it via your very-own custom interface.
+
+Think about what kinds of inputs and outputs your interface will handle and write the code to match for them.
+
+Some questions to consider:
+
+How should you check for whether the user's answer is correct? Where should this logic live?
+What happens when a user starts the game?
+What happens when a user finishes the game?
+How will you handle incorrect answers?
+Finish building out your app. Make sure everything works peachy keen.
+
+Optimize Your Learning
+
+Consider your choices:
+
+Why did you organize your classes and logic in the way that you did?
+What have you learned about object-oriented thinking?
+How flexible is your code? For example, how many changes would you have to make in how many different files to allow for users to see the first letter of the answer? What if you wanted to allow case-insensitive answers?
+Resources
+
+software design patterns
+Model-View-Controller
+Jeff Atwood's post
+SPOILER ALERT: These contain solutions to the Todo challenge - make sure you have solved it on your own first!
+
+Code for Tanner's ToDo app
+Jesse's talk on refactoring the ToDo app
