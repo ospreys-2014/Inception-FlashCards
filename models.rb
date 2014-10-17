@@ -24,4 +24,5 @@ end
 
 # test_flash = Flashcard.new({})
 
-p test_player = Player.new("ali")
+# p test_player = Player.new("ali")
+
